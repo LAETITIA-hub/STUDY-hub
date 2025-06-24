@@ -1,24 +1,21 @@
-# server/server.py
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_cors import CORS
 
 from config import Config
-
-db = SQLAlchemy()
-migrate = Migrate()
+from models import db, User, Course, Enrollment, Discussion
 
 def create_app():
     app = Flask(__name__)
     app.config.from_object(Config)
 
+    # Setup extensions
     CORS(app)
     db.init_app(app)
-    migrate.init_app(app, db)
+    Migrate(app, db)
 
-    from models import User, Course, Enrollment, Discussion  # Import models
-
+    # Example route
     @app.route('/')
     def home():
         return {"message": "MoringaStudyHub API is live"}
