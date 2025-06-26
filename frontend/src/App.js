@@ -15,6 +15,7 @@ function AppRoutes() {
   const location = useLocation();
   const isAuthPage = location.pathname === '/login' || location.pathname === '/signup';
   const isLoggedIn = Boolean(localStorage.getItem('token'));
+  
 
   return (
     <>
