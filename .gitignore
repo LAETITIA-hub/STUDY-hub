@@ -1,12 +1,25 @@
-# React
-client/node_modules/
-client/build/
-
 # Python
-server/venv/
+venv/
 __pycache__/
 *.pyc
+instance/
+app.db
 
-# OS
-.DS_Store
+# Node
+node_modules/
+build/
+dist/
 .env
+
+# System
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Misc
+*.sqlite3
+*.pyo
+*.pyd
+*.swp 
