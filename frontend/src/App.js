@@ -11,8 +11,6 @@ import UserProfile from './pages/UserProfile';
 import MyCourseDetail from './pages/MyCourseDetail';
 import ItemDiscussion from './pages/ItemDiscussion';
 
-
-
 function AppRoutes() {
   const location = useLocation();
   const isAuthPage = location.pathname === '/login' || location.pathname === '/signup';
