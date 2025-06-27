@@ -20,7 +20,7 @@ function GiveFeedback() {
     async function fetchFeedbacks() {
       setLoading(true);
       try {
-        const res = await fetch('http://localhost:5000/discussions/1'); // Show all feedback for course 1 or general
+        const res = await fetch('/api/discussions/1'); // Show all feedback for course 1 or general
         const data = await res.json();
         if (res.ok) {
           setFeedbacks(data);
@@ -45,7 +45,7 @@ function GiveFeedback() {
       body.user_id = null; // Mark as anonymous
     }
     try {
-      const res = await fetch('http://localhost:5000/discussions', {
+      const res = await fetch('/api/discussions', {
         method: 'POST',
         headers,
         body: JSON.stringify(body),
@@ -55,7 +55,7 @@ function GiveFeedback() {
         setFeedbackMsg('Feedback posted!');
         resetForm();
         // Refresh feedbacks
-        const res2 = await fetch('http://localhost:5000/discussions/1');
+        const res2 = await fetch('/api/discussions/1');
         const data2 = await res2.json();
         if (res2.ok) setFeedbacks(data2);
       } else {
