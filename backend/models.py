@@ -15,6 +15,7 @@ class User(db.Model):
     enrollments = db.relationship('Enrollment', back_populates='user', cascade='all, delete-orphan')
     discussions = db.relationship('Discussion', back_populates='user', cascade='all, delete-orphan')
 
+
 class Course(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(200), nullable=False)
