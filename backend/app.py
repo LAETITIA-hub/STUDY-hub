@@ -19,7 +19,7 @@ jwt = JWTManager(app)
 
 # Register blueprints/routes
 from routes import api_bp
-app.register_blueprint(api_bp)
+app.register_blueprint(api_bp, url_prefix='/api')
 # Serve React App
 @app.route('/')
 def serve():
