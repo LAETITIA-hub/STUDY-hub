@@ -42,7 +42,7 @@ target_db = current_app.extensions['migrate'].db
 # other values from the config, defined by the needs of env.py,
 # can be acquired:
 # my_important_option = config.get_main_option("my_important_option")
-# ... etc.
+# ...etc
 
 
 def get_metadata():
