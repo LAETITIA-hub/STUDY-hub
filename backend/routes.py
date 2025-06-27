@@ -10,7 +10,6 @@ api_bp = Blueprint('api', __name__)
 # User signup
 @api_bp.route('/signup', methods=['POST'])
 def signup():
-    
     data = request.get_json()
     name = data.get('name')
     email = data.get('email')
