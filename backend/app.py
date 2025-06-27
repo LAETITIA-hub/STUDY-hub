@@ -7,6 +7,7 @@ from config import Config
 from models import db
 import os
 
+
 # Initialize Flask app
 app = Flask(__name__, static_folder='static', static_url_path='')
 app.config.from_object(Config)
