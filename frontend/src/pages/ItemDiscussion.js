@@ -73,7 +73,7 @@ function ItemDiscussion() {
     e.preventDefault();
     setMsg(null);
     try {
-      const res = await fetch(`http://localhost:5000/${updateEndpoint}/${editId}`, {
+      const res = await fetch(`/${updateEndpoint}/${editId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({ content: editContent }),
@@ -99,7 +99,7 @@ function ItemDiscussion() {
     setMsg(null);
     if (!window.confirm('Delete this comment?')) return;
     try {
-      const res = await fetch(`http://localhost:5000/${updateEndpoint}/${id}`, {
+      const res = await fetch(`/${updateEndpoint}/${id}`, {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${token}` },
       });
