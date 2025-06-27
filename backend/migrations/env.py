@@ -10,7 +10,7 @@ from alembic import context
 config = context.config
 
 # Interpret the config file for Python logging.
-# This line sets up loggers basically.
+# This line sets up loggers basically when logging in.
 fileConfig(config.config_file_name)
 logger = logging.getLogger('alembic.env')
 
