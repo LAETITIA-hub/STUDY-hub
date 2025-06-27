@@ -24,8 +24,8 @@ function MyCourses() {
       }
       try {
         const [enrollRes, courseRes] = await Promise.all([
-          fetch(`/enrollments/${userId}`),
-          fetch('/courses'),
+          fetch(`/api/enrollments/${userId}`),
+          fetch('/api/courses'),
         ]);
         const enrollData = await enrollRes.json();
         const courseData = await courseRes.json();
