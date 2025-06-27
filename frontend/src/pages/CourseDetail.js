@@ -84,7 +84,7 @@ function CourseDetail() {
       setLoading(true);
       setError(null);
       try {
-        const res = await fetch(`/courses/${id}`);
+        const res = await fetch(`/api/courses/${id}`);
         const data = await res.json();
         if (res.ok) {
           setCourse(data);
@@ -107,7 +107,7 @@ function CourseDetail() {
       return;
     }
     try {
-      const res = await fetch('/enrollments', {
+      const res = await fetch('/api/enrollments', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
