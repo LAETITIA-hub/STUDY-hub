@@ -20,7 +20,7 @@ function ItemDiscussion() {
   const token = localStorage.getItem('token');
   const userId = localStorage.getItem('user_id');
 
-  const endpoint = `/${type}/${itemId}/discussions`;
+  const endpoint = `/api/${type}/${itemId}/discussions`;
   const updateEndpoint = type === 'labs' ? 'lab-discussions' : type === 'quizzes' ? 'quiz-discussions' : 'exam-discussions';
 
   useEffect(() => {
@@ -73,7 +73,7 @@ function ItemDiscussion() {
     e.preventDefault();
     setMsg(null);
     try {
-      const res = await fetch(`/${updateEndpoint}/${editId}`, {
+      const res = await fetch(`/api/${updateEndpoint}/${editId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({ content: editContent }),
@@ -99,7 +99,7 @@ function ItemDiscussion() {
     setMsg(null);
     if (!window.confirm('Delete this comment?')) return;
     try {
-      const res = await fetch(`/${updateEndpoint}/${id}`, {
+      const res = await fetch(`/api/${updateEndpoint}/${id}`, {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${token}` },
       });
