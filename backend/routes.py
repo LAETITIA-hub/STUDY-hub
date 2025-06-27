@@ -75,7 +75,7 @@ def get_enrollments(user_id):
         {'id': e.id, 'course_id': e.course_id, 'progress': e.progress, 'date_enrolled': e.date_enrolled.isoformat() if e.date_enrolled else None} for e in enrollments
     ])
 
-# Create new discussion
+# Create new discussion in courses
 @api_bp.route('/discussions', methods=['POST'])
 @jwt_required()
 def create_discussion():
