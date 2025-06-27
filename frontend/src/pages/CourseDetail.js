@@ -84,7 +84,7 @@ function CourseDetail() {
       setLoading(true);
       setError(null);
       try {
-        const res = await fetch(`http://localhost:5000/courses/${id}`);
+        const res = await fetch(`/courses/${id}`);
         const data = await res.json();
         if (res.ok) {
           setCourse(data);
@@ -107,7 +107,7 @@ function CourseDetail() {
       return;
     }
     try {
-      const res = await fetch('http://localhost:5000/enrollments', {
+      const res = await fetch('/enrollments', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
