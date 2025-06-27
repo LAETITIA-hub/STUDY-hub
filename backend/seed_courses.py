@@ -1,4 +1,5 @@
 from app import app
+
 from models import db, Course, Lab, Quiz, Exam
 
 courses = [
