@@ -20,7 +20,7 @@ function ItemDiscussion() {
   const token = localStorage.getItem('token');
   const userId = localStorage.getItem('user_id');
 
-  const endpoint = `http://localhost:5000/${type}/${itemId}/discussions`;
+  const endpoint = `/${type}/${itemId}/discussions`;
   const updateEndpoint = type === 'labs' ? 'lab-discussions' : type === 'quizzes' ? 'quiz-discussions' : 'exam-discussions';
 
   useEffect(() => {
