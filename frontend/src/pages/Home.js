@@ -52,7 +52,7 @@ function Home() {
     }
     setEnrollStatus((prev) => ({ ...prev, [courseId]: 'loading' }));
     try {
-      const res = await fetch('http://localhost:5000/enrollments', {
+      const res = await fetch('/enrollments', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
