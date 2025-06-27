@@ -67,7 +67,7 @@ def enroll():
     db.session.commit()
     return jsonify({'message': 'Enrolled successfully'}), 201
 
-# Get user's enrollments
+# Get user enrollments
 @api_bp.route('/enrollments/<int:user_id>', methods=['GET'])
 def get_enrollments(user_id):
     enrollments = Enrollment.query.filter_by(user_id=user_id).all()
