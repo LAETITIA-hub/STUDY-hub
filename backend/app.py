@@ -10,7 +10,7 @@ from models import db
 app = Flask(__name__)
 app.config.from_object(Config)
 
-# Initialize extensions
+# Initialize extensions ON FLASK
 CORS(app)
 db.init_app(app)
 migrate = Migrate(app, db)
