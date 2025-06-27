@@ -22,9 +22,9 @@ function MyCourseDetail() {
       try {
         const headers = { Authorization: `Bearer ${token}` };
         const [labsRes, quizzesRes, examsRes] = await Promise.all([
-          fetch(`/courses/${courseId}/labs`, { headers }),
-          fetch(`/courses/${courseId}/quizzes`, { headers }),
-          fetch(`/courses/${courseId}/exams`, { headers }),
+          fetch(`/api/courses/${courseId}/labs`, { headers }),
+          fetch(`/api/courses/${courseId}/quizzes`, { headers }),
+          fetch(`/api/courses/${courseId}/exams`, { headers }),
         ]);
         const labsData = await labsRes.json();
         const quizzesData = await quizzesRes.json();
@@ -45,7 +45,7 @@ function MyCourseDetail() {
   }, [courseId, token]);
 
   async function toggleCompletion(type, id, is_complete) {
-    const url = `/${type}/${id}/completion`;
+    const url = `/api/${type}/${id}/completion`;
     try {
       const res = await fetch(url, {
         method: 'POST',
