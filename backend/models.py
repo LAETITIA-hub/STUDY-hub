@@ -11,7 +11,7 @@ class User(db.Model):
     student_id = db.Column(db.String(50), unique=True, nullable=False)
     track = db.Column(db.String(100))
     is_instructor = db.Column(db.Boolean, default=False)
-    password_hash = db.Column(db.String(128))
+    password_hash = db.Column(db.String(512))
     enrollments = db.relationship('Enrollment', back_populates='user', cascade='all, delete-orphan')
     discussions = db.relationship('Discussion', back_populates='user', cascade='all, delete-orphan')
 
