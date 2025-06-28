@@ -113,7 +113,7 @@ function CourseDetail() {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify({ course_id: id }),
+        body: JSON.stringify({ course_id: parseInt(id) }),
       });
       const data = await res.json();
       if (res.ok) {
